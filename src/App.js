@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { Suspense, lazy } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+const Artist = lazy(() => import("../src/Pages/Artist/Artist"));
+const ArtistAlbum = lazy(() => import("../src/Pages/ArtistAlbum/ArtistAlbum"));
+const ArtistTweet = lazy(() => import("../src/Pages/ArtistTweet/ArtistTweet"));
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Suspense>
+          <Routes>
+            <Route path="/" element={<Artist />} />
+            <Route path="/album" element={<ArtistAlbum />} />
+            <Route path="/tweet" element={<ArtistTweet />} />
+          </Routes>
+        </Suspense>
+      </div>
+    </Router>
   );
 }
 
