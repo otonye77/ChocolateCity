@@ -19,3 +19,16 @@ export const fetchTweets = async () => {
     const response = await axios.get(`${baseUrl}/comments`);
     return response.data;
 }
+
+export const CreateTweets = async (artistId, tweet) => {
+    try {
+        const response = await axios.post(`${baseUrl}/posts`, {
+            userId: artistId,
+            title: tweet,
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error posting tweet:', error);
+        throw error;
+    }
+}
