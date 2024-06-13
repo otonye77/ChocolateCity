@@ -15,7 +15,7 @@ function App() {
         <Suspense>
           <Routes>
             <Route path="/" element={<Artist />} />
-            <Route path="/album" element={<ArtistAlbum />} />
+            <Route path="/albums/:artistId" element={<ArtistAlbum />} />
             <Route path="/tweet" element={<ArtistTweet />} />
           </Routes>
         </Suspense>

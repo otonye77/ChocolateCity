@@ -13,7 +13,7 @@ const Artist = () => {
         }
         getArtistsData();
     }, [])
-    console.log(artists)
+   
     return (
         <div>
             <div className="artist-container">

@@ -1,0 +1,29 @@
+.albums-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .album {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .album h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .album img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .album p {
+    font-size: 14px;
+    color: #666;
+  }
+  

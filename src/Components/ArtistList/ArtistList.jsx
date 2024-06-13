@@ -1,10 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import "./ArtistList.css";
 
 const ArtistList = ({ artist }) => {
-    const { name, username, email, phone, address: {city} } = artist;
+    const navigate = useNavigate();
+    const { id, name, username, email, phone, address: {city} } = artist;
+
+    const GoToArtistAlbum = (id) => {
+        navigate(`/albums/${id}`)
+    }
 
     return (
-        <div className="artist-card">
+        <div onClick={() => GoToArtistAlbum(id)} className="artist-card">
             <h2>{name}</h2>
             <p><strong>Username:</strong> {username}</p>
             <p><strong>Email:</strong> {email}</p>

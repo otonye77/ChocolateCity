@@ -5,8 +5,13 @@ export const fetchArtist = async () => {
     return response.data;
 }
 
-export const fetchAlbums = async () => {
-    const response = await axios.get(`${baseUrl}/albums?${artistId}`);
+export const fetchAlbums = async (artistId) => {
+    const response = await axios.get(`${baseUrl}/albums?userId=${artistId}`);
+    return response.data;
+}
+
+export const fetchAlbumsPhotos = async (albumId) => {
+    const response = await axios.get(`${baseUrl}/albums/${albumId}/photos`);
     return response.data;
 }
 
