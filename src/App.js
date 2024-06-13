@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const Artist = lazy(() => import("../src/Pages/Artist/Artist"));
 const ArtistAlbum = lazy(() => import("../src/Pages/ArtistAlbum/ArtistAlbum"));
-const ArtistTweet = lazy(() => import("../src/Pages/ArtistTweet/ArtistTweet"));
+const Tweet = lazy(() => import("../src/Pages/ArtistTweet/Tweet"));
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Artist />} />
             <Route path="/albums/:artistId" element={<ArtistAlbum />} />
-            <Route path="/tweet" element={<ArtistTweet />} />
+            <Route path="/tweets/:artistId" element={<Tweet />} />
           </Routes>
         </Suspense>
       </div>

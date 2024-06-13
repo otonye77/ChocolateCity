@@ -24,7 +24,10 @@ const ArtistList = ({ artist }) => {
             <p><strong>Email:</strong> {email}</p>
             <p><strong>Phone:</strong> {phone}</p>
             <p><strong>City:</strong> {city}</p>
-            <Link onClick={ShowForm}>Create Tweet</Link>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+               <Link onClick={ShowForm}>Create Tweet</Link>
+                <Link to={`/tweets/${id}`}>See Tweets</Link>
+            </div>
             {showTweetForm && <ArtistTweet artistId={id} />}
         </div>
     );
